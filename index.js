@@ -12,7 +12,7 @@ searchMovies();
 */
 
 document.addEventListener('DOMContentLoaded',()=>{})
-const apiEndpoint="https://www.omdbapi.com/?apikey=2cff54a&";   // The URL is stored in a variable called "apiEndpoint" 
+const apiEndpoint="https://www.omdbapi.com/?apikey=b2cff54a";   // The URL is stored in a variable called "apiEndpoint" 
 const display=document.querySelector("#search-input");          // "display" is a variable  
 
 const getMovies = async(searchQuery) => {                         //"getMovies" is a FUNCTION; accept a search query as a parameter
@@ -28,23 +28,25 @@ const getMovies = async(searchQuery) => {                         //"getMovies" 
 
 const displayMovies = async(searchQuery) => {                      //Accept a searcy query as a parameter
     const payload = await getMovies(searchQuery);                //"payload" is a variable; passing the searcy query to getMovies
+        
         if (!payload.Search) {
             display.innerHTML = "<p>No movies found.</p>";          // Handle case where no movies are found
             return;
         }
 
     const sortedMovies = payload.Search.sort((a, b) => a.Title.localeCompare(b.Title));   // Sort the movies alphabetically by title
-
+        console.log(sortedMovies)
     let dataDisplay = sortedMovies.map((object) => {            //"object" represents each item in the array; we use payload.Search to access the array of movies
-        const {Title, Year, ImdbID, Type, Poster} = object;  
+        const {Title, Year, imdbID, Type, Poster} = object;  
                                                                 //Following is the Template with the various objects.
         return `                                                                                  
         <div class="container">                                 
             <p>Title: ${Title}</p>
             <p>Year: ${Year}</p>
-            <p>ImdbID: ${ImdbID}</p>
+            <p>ImdbID: ${imdbID}</p>
             <p>Type: ${Type}</p>
-            <p>Poster: ${Poster}</p>
+            <p>Poster: <img src="${Poster}"> </p>
+            
         </div>`;
     })
     .join("");                                                  //removes the commas in between the output of the elements
