@@ -36,15 +36,16 @@ const displayMovies = async(searchQuery) => {                      //Accept a se
     const sortedMovies = payload.Search.sort((a, b) => a.Title.localeCompare(b.Title));   // Sort the movies alphabetically by title
 
     let dataDisplay = sortedMovies.map((object) => {            //"object" represents each item in the array; we use payload.Search to access the array of movies
-        const {title, year, imdbID, type, poster} = object;                                                         
-        return                                                   //Following is the Template with the various objects.
-        `<div class="container">                                 
-            <p>Title: ${title}</p>
-            <p>Year: ${year}</p>
-            <p>ImdbID: ${imdbID}</p>
-            <p>Type: ${type}</p>
-            <p>Poster: ${poster}</p>
-        </div>`
+        const {Title, Year, ImdbID, Type, Poster} = object;  
+                                                                //Following is the Template with the various objects.
+        return `                                                                                  
+        <div class="container">                                 
+            <p>Title: ${Title}</p>
+            <p>Year: ${Year}</p>
+            <p>ImdbID: ${ImdbID}</p>
+            <p>Type: ${Type}</p>
+            <p>Poster: ${Poster}</p>
+        </div>`;
     })
     .join("");                                                  //removes the commas in between the output of the elements
 
