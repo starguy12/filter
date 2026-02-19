@@ -1,15 +1,6 @@
 //https://www.omdbapi.com/?apikey=2cff54a&
+//https://starguy12.github.io/filter/   --> my live link
 
-/*
-async function searchMovies() {
-    const response = await fetch(`https://www.omdbapi.com/?s=spider&apikey=b2cff54a`);
-    const data = await response.json();
-    console.log(data);
-}
-
-searchMovies();
- 
-*/
 
 document.addEventListener('DOMContentLoaded',()=>{})
 const apiEndpoint="https://www.omdbapi.com/?apikey=b2cff54a";   // The URL is stored in a variable called "apiEndpoint" 
@@ -35,7 +26,7 @@ const displayMovies = async(searchQuery) => {                      //Accept a se
         }
 
     const sortedMovies = payload.Search.sort((a, b) => a.Title.localeCompare(b.Title));   // Sort the movies alphabetically by title
-        console.log(sortedMovies)
+    
     let dataDisplay = sortedMovies.map((object) => {            //"object" represents each item in the array; we use payload.Search to access the array of movies
         const {Title, Year, imdbID, Type, Poster} = object;  
                                                                 //Following is the Template with the various objects.

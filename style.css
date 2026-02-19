@@ -1,12 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital:wght@400;500;700&display=swap');
 
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+h1 {
+    text-align: center; /* Centers the text horizontally */
+}
+
+#search {
+    display: block; /* Make it a block element */
+    margin: 0 auto; /* Center it horizontally */
+    width: 15%; /* Set a width for the input */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #333; /* Dark background for the nav */
+    padding: 10px 20px; /* Padding around the nav */
+}
+
+.nav__row {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between title and links */
+    align-items: center; /* Center items vertically */
+}
+
+.nav__title {
+    color: #fff; /* White text for the title */
+    font-size: 24px; /* Larger font size for the title */
+    font-weight: bold; /* Bold title */
+}
+
+.nav__links {
+    display: flex; /* Flexbox for links */
+}
+
+.nav__link {
+    color: #fff; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+    margin-left: 20px; /* Space between links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav__link:hover {
+    color: #ff6347; /* Change color on hover (tomato color) */
+}
+
+
+/*
 .content-wrapper[data-v-390ceb07] {
     align-items: center;
     flex-direction: column;
     margin-top: -20px;
     z-index: 2
 }
+
 
 .navbar[data-v-390ceb07] {
     height: 326px;
@@ -120,6 +172,7 @@ h1[data-v-390ceb07] {
     display: none
 }
 
+
 @media screen and (max-width: 750px) {
     .links[data-v-390ceb07] {
         display:none!important
@@ -179,7 +232,7 @@ h2[data-v-66aecfa2] {
     font-size: 20px;
     color: #6030b1
 }
-
+/*
 .price-filter[data-v-66aecfa2] {
     width: 30%;
     min-width: 335px
@@ -257,7 +310,7 @@ h2[data-v-66aecfa2] {
     width: 100%;
     margin: 0 auto
 }
-
+*/
 
 /* FOOTER
 
@@ -283,7 +336,7 @@ footer{
     color: #6e6e6e;
 }
 
-
+/*
 @media(max-width: 450px) {
     #filter[data-v-66aecfa2] {
         padding:0!important
@@ -516,3 +569,4 @@ h2[data-v-ca62299c] {
     display: flex;
     flex-direction: column
 }
+*/
